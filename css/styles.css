@@ -17,6 +17,10 @@ button{
     background: linear-gradient(156deg, rgba(88, 88, 173, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(74, 176, 207, 1) 66%, rgba(0, 212, 255, 1) 100%);
     text-transform: uppercase;
     box-shadow: 5px 5px rgb(68, 54, 194);
+    transition: 0.25s;
+}
+button:hover{
+background: rgb(177, 143, 255);
 }
 section#home{
     height:100vh;
@@ -31,6 +35,17 @@ section#home header{
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
+}
+section#home header .title{
+    display: flex;
+    align-items: center;
+
+}
+section#home header div img{
+    width: 4rem;
+    border-radius: 50px;
+    margin-right: 15px;
+
 }
 section#home header div h1{
     color: #ffffff;
@@ -49,7 +64,13 @@ section#home header nav ul li a{
     color: white;
     text-decoration: none;
     font-size: 1.3rem;
+    transition: 0.25s;
 }
+section#home header nav ul li a:hover{
+    color: aqua;
+
+}
+
 
 section#home #content{
     padding: 20px;
@@ -64,3 +85,42 @@ section#home #content h2 {
     color: white;
     margin-top: 20px;
 }
+section#home #content  img{
+      width: 23rem;
+    border-radius: 50px;
+    margin-right: 15px;
+
+}
+section#home #content button{
+    margin-right: 20px;
+    margin-top: 30px;
+
+}
+section#intro{
+
+    height:100vh;
+    background: #3c3c48;
+    background: radial-gradient(circle, rgba(88, 88, 173, 1) 0%, rgba(9, 9, 121, 1) 100%, rgba(74, 176, 207, 1) 43%, rgba(0, 212, 255, 1) 75%);
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    align-content: center;
+}
+section#intro #content div{
+    
+    margin-top: 90px;
+}
+section#intro #content div img{
+     width: 37rem;
+    border-radius: 50px;
+    margin-right: 15px;
+}
+section#intro #content2 {
+
+}
+section#intro #content2 div{
+    
+    margin-top: 90px;
+}
+
+    
