@@ -25,6 +25,7 @@ body {
   width: 240px;
   height: 240px;
   background: url("../img/dk.png") no-repeat center/contain;
+  animation: salto 2s linear infinite;
 }
 
 
@@ -38,7 +39,6 @@ body {
   transform: rotate(-15deg);
 }
 
-
 #barril2 {
   position: absolute;
   bottom: 14%;   /*altura */
@@ -46,4 +46,41 @@ body {
   width: 160px;
   height: 160px;
   background: url("../img/barril.png") no-repeat center/contain;
+}
+.girobarril{
+ animation: rotarbarril 2s linear infinite;
+
+
+
+}
+@keyframes rotarbarril{
+  from{
+    transform: rotate(0deg);
+
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+@keyframes salto{
+  0%{
+    bottom: 100%;
+
+  }
+  25%{
+    bottom: 60%;
+
+  }
+  50%{
+    bottom: 42%;
+  }
+  75%{
+    left: 30%;
+    bottom: 40%;
+  }
+  100%{
+    left: 80%;
+    bottom:14%;
+
+  }
 }
