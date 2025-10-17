@@ -1,0 +1,191 @@
+/* --- CONFIGURACIÓN DE BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #000;
+}
+
+/* --- EFECTO DE IMAGEN DE FONDO (Overlay) --- */
+.background-wrap {
+    /* RUTA DE LA IMAGEN DE FONDO (sale de la carpeta CSS y entra en IMG) */
+    background-image: url('../imgen/mitienda.jpg'); 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    /* Esto asegura que el contenido sea visible */
+    z-index: 0; 
+}
+
+/* Capa Oscura Transparente (Overlay) */
+.background-wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Negro con 75% de opacidad */
+    z-index: -1; 
+}
+
+/* --- HEADER Y NAVEGACIÓN STICKY --- */
+.main-header {
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo casi negro para el header */
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; 
+    top: 0; 
+    z-index: 100; /* Siempre arriba de todo */
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #cc0000; /* Rojo */
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+
+/* --- SECCIÓN HERO --- */
+.hero-section {
+    display: flex;
+    flex-wrap: wrap; /* Adaptabilidad */
+    justify-content: space-around;
+    align-items: center;
+    padding: 80px 40px;
+    min-height: 70vh;
+}
+
+.hero-content {
+    max-width: 400px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.btn-ordenar {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #cc0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.hero-image {
+    max-width: 450px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* --- TÍTULO DE LA SECCIÓN DE PRODUCTOS --- */
+.section-title {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2.2em;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2); /* Banda transparente */
+    margin: 40px 0;
+}
+
+/* --- GRID DE PRODUCTOS --- */
+.products-grid {
+    display: grid;
+    /* 4 columnas por defecto */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.product-item {
+    background-color: rgba(255, 255, 255, 0.05); /* Ligeramente transparente */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.product-item img {
+    width: 250px; 
+    height: 250px; 
+    object-fit: contain; 
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.price-tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-cart {
+    background-color: #cc0000;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 40px;
+    margin-top: 50px;
+}
+
+.footer-info h3 {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+/* --- ADAPTABILIDAD (Responsive Design) --- */
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .products-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+    .main-header {
+        flex-direction: column;
+    }
+}
