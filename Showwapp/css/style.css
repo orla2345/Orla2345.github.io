@@ -1,8 +1,8 @@
-/* --- CONFIGURACIÓN DE BASE --- */
+
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     font-family: Arial, sans-serif;
 }
 
@@ -10,20 +10,19 @@ body {
     background-color: #000;
 }
 
-/* --- EFECTO DE IMAGEN DE FONDO (Overlay) --- */
+/* --- EFECTO DE IMAGEN DE FONDO--- */
 .background-wrap {
-    /* RUTA DE LA IMAGEN DE FONDO (sale de la carpeta CSS y entra en IMG) */
+  
     background-image: url('../imgen/mitienda.jpg'); 
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
-    /* Esto asegura que el contenido sea visible */
     z-index: 0; 
 }
 
-/* Capa Oscura Transparente (Overlay) */
+/* Capa Oscura */
 .background-wrap::before {
     content: "";
     position: absolute;
@@ -31,13 +30,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.75); /* Negro con 75% de opacidad */
+    background-color: rgba(0, 0, 0, 0.75); 
     z-index: -1; 
 }
 
-/* --- HEADER Y NAVEGACIÓN STICKY --- */
 .main-header {
-    background-color: rgba(0, 0, 0, 0.85); /* Fondo casi negro para el header */
+    background-color: rgba(0, 0, 0, 0.85);
     color: white;
     padding: 15px 40px;
     display: flex;
@@ -45,13 +43,13 @@ body {
     align-items: center;
     position: sticky; 
     top: 0; 
-    z-index: 100; /* Siempre arriba de todo */
+    z-index: 100;
 }
 
 .logo {
     font-size: 1.5em;
     font-weight: bold;
-    color: #cc0000; /* Rojo */
+    color: #cc0000;
 }
 
 .main-nav a {
@@ -62,13 +60,13 @@ body {
     font-weight: bold;
 }
 
-/* --- SECCIÓN HERO --- */
+
 .hero-section {
     display: flex;
-    flex-wrap: wrap; /* Adaptabilidad */
+    flex-wrap: wrap; 
     justify-content: space-around;
     align-items: center;
-    padding: 80px 40px;
+    padding: 5vh 5vw; 
     min-height: 70vh;
 }
 
@@ -101,21 +99,20 @@ body {
     border-radius: 10px;
 }
 
-/* --- TÍTULO DE LA SECCIÓN DE PRODUCTOS --- */
 .section-title {
     text-align: center;
     padding: 20px 0;
     font-size: 2.2em;
     color: white;
-    background-color: rgba(255, 255, 255, 0.2); /* Banda transparente */
+    background-color: rgba(255, 255, 255, 0.2); 
     margin: 40px 0;
 }
 
-/* --- GRID DE PRODUCTOS --- */
+
 .products-grid {
     display: grid;
-    /* 4 columnas por defecto */
-    grid-template-columns: repeat(4, 1fr); 
+   
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
@@ -123,7 +120,7 @@ body {
 }
 
 .product-item {
-    background-color: rgba(255, 255, 255, 0.05); /* Ligeramente transparente */
+    background-color: rgba(255, 255, 255, 0.05); 
     padding: 15px;
     border-radius: 10px;
     text-align: center;
@@ -131,9 +128,10 @@ body {
 }
 
 .product-item img {
-    width: 250px; 
+   
+    width: 100%; 
     height: 250px; 
-    object-fit: contain; 
+    object-fit: contain;
     border-radius: 5px;
     display: block;
     margin: 0 auto 10px auto;
@@ -170,22 +168,137 @@ body {
     color: #ccc;
 }
 
-/* --- ADAPTABILIDAD (Responsive Design) --- */
+
 @media (max-width: 1024px) {
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    
+    .main-header {
+        padding: 15px 20px;
     }
+
     .hero-section {
         flex-direction: column;
         text-align: center;
     }
+    .hero-image {
+        order: 1; 
+        margin-bottom: 30px;
+    }
+    .hero-content {
+        order: 2;
+    }
+    .hero-image img {
+        max-width: 80vw;
+        height: auto;
+    }
 }
 
 @media (max-width: 600px) {
-    .products-grid {
-        grid-template-columns: 1fr; /* 1 columna en móviles */
-    }
+    
+   
     .main-header {
         flex-direction: column;
+        padding: 15px 10px;
+    }
+    .main-nav {
+        margin-top: 10px;
+    }
+    .main-nav a {
+        margin: 0 5px;
+        font-size: 0.85em;
+    }
+    
+    /* Héroe: Fuentes más pequeñas */
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+   
+    .product-item img {
+        height: 200px;
+    }
+
+
+    .main-footer {
+        padding: 20px 15px;
+    }
+}
+/* --- ESTILOS --- */
+
+
+.main-footer {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    background-color: #333;
+    color: white;
+    padding: 30px 40px;
+    margin-top: 50px;
+}
+
+.footer-info, .social-icons {
+  
+    flex: 1; 
+    min-width: 250px; 
+    margin-bottom: 20px;
+}
+
+/* --- MÉTODOS DE PAGO --- */
+.payment-icons {
+    display: flex;
+    gap: 15px; 
+    margin-top: 10px;
+}
+
+.card-icon {
+    width: 50px; 
+    height: auto;
+    background-color: #fff; 
+    padding: 3px;
+    border-radius: 4px;
+}
+
+/* --- REDES  --- */
+.social-icons {
+    text-align: right;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 25px; 
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 60px; 
+    height: 60px;
+    border-radius: 50%; 
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1); 
+}
+
+/* Adaptabilidad  */
+@media (max-width: 600px) {
+    .main-footer {
+        flex-direction: column;
+        align-items: center; 
+        text-align: center;
+    }
+
+    .footer-info, .social-icons {
+        min-width: 100%;
+    }
+    
+    
+    .payment-icons, .social-links {
+        justify-content: center; 
+    }
+    
+    .social-icons {
+        text-align: center;
     }
 }
