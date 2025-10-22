@@ -35,7 +35,7 @@ body {
     z-index: -1;
 }
 
-/* --- HEADER el mismo del anterior  --- */
+/*  HEADER    */
 .main-header {
     background-color: rgba(0, 0, 0, 0.85);
     color: white;
@@ -88,14 +88,13 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* - into pro - */
 .product-intro {
     color: white;
     margin-bottom: 30px;
 }
 
 .new-tag {
-    background-color: #007bff; /* Azul para "Nuevo" */
+    background-color: #007bff; 
     display: inline-block;
     padding: 3px 8px;
     border-radius: 3px;
@@ -278,7 +277,7 @@ body {
     transform: scale(1.1);
 }
 
-/* - ADAPTABILIDAD  - */
+
 @media (max-width: 1024px) {
     .product-detail-container {
         padding: 20px;
