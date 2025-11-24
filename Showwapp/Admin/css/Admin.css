@@ -8,16 +8,16 @@ body {
     min-height: 100vh; 
 }
 
-/* --- BARRA LATERAL (SIDEBAR) --- */
+
 .sidebar {
     width: 250px; 
-    /* Fondo negro al 60% de opacidad para ver el fondo detrás */
-    background-color: rgba(0, 0, 0, 0.6); 
-    /* EL EFECTO VIDRIO: Desenfoca lo que hay atrás */
-    backdrop-filter: blur(15px); 
-    -webkit-backdrop-filter: blur(15px); /* Para Safari */
     
-    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil brillante */
+    background-color: rgba(0, 0, 0, 0.6); 
+   
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); 
+    
+    border-right: 1px solid rgba(255, 255, 255, 0.1); 
     
     display: flex; flex-direction: column; padding: 20px; position: fixed; height: 100%; z-index: 100;
     box-shadow: 2px 0 10px rgba(0,0,0,0.5);
@@ -69,26 +69,26 @@ body {
 }
 
 .card {
-    /* Fondo blanco muy sutil (5%) */
+    
     background: rgba(255, 255, 255, 0.05); 
     
-    /* Desenfoque fuerte */
+  
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     
-    /* Borde fino y sombra profunda */
+    
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     
-    padding: 25px; border-radius: 15px; /* Bordes más redondos como el login */
+    padding: 25px; border-radius: 15px; 
     text-align: center;
     transition: transform 0.3s, border-color 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    border-color: #cc0000; /* Se ilumina rojo al pasar el mouse */
-    background: rgba(255, 255, 255, 0.08); /* Un poco más claro */
+    border-color: #cc0000; 
+    background: rgba(255, 255, 255, 0.08); 
 }
 
 
@@ -104,7 +104,7 @@ body {
 
 /* --- TABLAS --- */
 .table-container, .form-container { 
-    background: rgba(255, 255, 255, 0.05); /* Mismo vidrio */
+    background: rgba(255, 255, 255, 0.05); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     
@@ -134,19 +134,19 @@ td { padding: 15px; border-bottom: 1px solid #333; }
 .admin { background-color: #cc0000; }
 .user { background-color: #555; }
 
-/* --- FORMULARIOS (NUEVO ESTILO MEJORADO) --- */
+
 
 .input-group { margin-bottom: 15px; }
 label { display: block; margin-bottom: 5px; color: #ccc; font-weight: bold; }
 
-/* Estilo para inputs normales y selects */
+
 input, select { 
     width: 100%; padding: 12px; 
-    background: #1a1a1a; /* Fondo oscuro para inputs */
+    background: #1a1a1a; 
     border: 1px solid #444; color: white; border-radius: 5px; 
 }
 
-/* Estilo ESPECIAL para las cajas grandes de texto */
+
 textarea {
     width: 100%;
     padding: 15px;
@@ -154,7 +154,7 @@ textarea {
     border: 1px solid #444;
     color: #e0e0e0;
     border-radius: 8px;
-    font-family: 'Consolas', monospace; /* Letra tipo código */
+    font-family: 'Consolas', monospace; 
     font-size: 0.95em;
     line-height: 1.5;
     resize: vertical;

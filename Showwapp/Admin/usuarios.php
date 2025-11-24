@@ -44,7 +44,7 @@
                             echo "<td>#".$row['id_usuario']."</td>";
                             echo "<td>".$row['nombre']."</td>";
                             echo "<td>".$row['email']."</td>";
-                            // Lógica para mostrar el ROL con color
+                          
                             $clase_rol = ($row['rol'] == 'admin') ? 'admin' : 'user';
                             echo "<td><span class='role-badge $clase_rol'>".strtoupper($row['rol'])."</span></td>";
                             

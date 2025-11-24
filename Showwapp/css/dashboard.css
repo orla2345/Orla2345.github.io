@@ -1,8 +1,8 @@
-/* --- CONFIGURACIÓN BASE --- */
+
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 body { background-color: #000; color: white; }
 
-/* --- CONTENEDOR PRINCIPAL (LAYOUT) --- */
+
 .dashboard-container {
     display: flex;
     min-height: 100vh;
@@ -12,14 +12,13 @@ body { background-color: #000; color: white; }
     background-attachment: fixed;
 }
 
-/* Capa oscura para que el texto se lea bien */
+
 .dashboard-container::before {
     content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
     background-color: rgba(0, 0, 0, 0.85);
     z-index: 0;
 }
 
-/* --- BARRA LATERAL (SIDEBAR) --- */
 .sidebar {
     position: relative; z-index: 1;
     width: 250px;

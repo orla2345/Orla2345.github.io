@@ -9,7 +9,7 @@
     <title>Nuevo Usuario - Admin</title>
     <link rel="stylesheet" href="css/admin.css">
     <style>
-        /* Estilo rápido para el formulario */
+       
         .form-container { max-width: 500px; margin: 0 auto; background: #111; padding: 30px; border-radius: 10px; }
         .input-group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; color: #ccc; }

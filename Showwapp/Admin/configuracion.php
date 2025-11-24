@@ -3,7 +3,7 @@
     if(!isset($_SESSION['usuario_rol']) || $_SESSION['usuario_rol'] != 'admin') exit();
     include '../php/conexion.php';
 
-    // Traemos los datos actuales de la BD para mostrarlos en los inputs
+  
     $sql = "SELECT * FROM configuracion WHERE id = 1";
     $res = mysqli_query($con, $sql);
     $fila = mysqli_fetch_assoc($res);

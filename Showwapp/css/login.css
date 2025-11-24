@@ -1,10 +1,10 @@
-/* --- CONFIGURACIÓN BASE --- */
+
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 body { background-color: #000; color: white; }
 
 /* --- FONDO --- */
 .background-wrap-login {
-    /* Asegúrate que la ruta de la imagen sea correcta */
+   
     background-image: url('../imgen/mitienda.jpg'); 
     background-size: cover;
     background-position: center;
@@ -16,11 +16,11 @@ body { background-color: #000; color: white; }
 
 .background-wrap-login::before {
     content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Capa oscura */
+    background-color: rgba(0, 0, 0, 0.8); 
     z-index: 0;
 }
 
-/* --- HEADER Y ESTRUCTURA --- */
+
 .main-header, .login-wrapper, .mini-footer { position: relative; z-index: 1; }
 
 .main-header {
@@ -33,7 +33,7 @@ body { background-color: #000; color: white; }
 .logo { font-size: 1.5em; font-weight: bold; color: #cc0000; }
 .main-nav a { color: white; text-decoration: none; font-weight: bold; font-size: 0.9em; }
 
-/* --- CAJA DE LOGIN (GLASSMORPHISM) --- */
+
 .login-wrapper {
     flex-grow: 1;
     display: flex;
@@ -57,7 +57,7 @@ body { background-color: #000; color: white; }
 .login-box h2 { margin-bottom: 10px; font-size: 2em; }
 .login-subtitle { color: #ccc; margin-bottom: 30px; font-size: 0.9em; }
 
-/* --- FORMULARIO --- */
+
 .input-group { text-align: left; margin-bottom: 20px; }
 .input-group label { display: block; margin-bottom: 8px; font-size: 0.9em; color: #ddd; }
 
@@ -103,9 +103,8 @@ body { background-color: #000; color: white; }
 }
 .btn-login:hover { background-color: #a00000; }
 
-/* --- FOOTER LINKS --- */
+
 .login-footer { margin-top: 20px; font-size: 0.9em; color: #ccc; }
 .login-footer a { color: #cc0000; text-decoration: none; font-weight: bold; }
 
-/* --- MINI FOOTER --- */
 .mini-footer { text-align: center; padding: 20px; color: #666; font-size: 0.8em; }

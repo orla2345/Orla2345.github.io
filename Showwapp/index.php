@@ -14,33 +14,33 @@
     
     <div class="background-wrap">
         
-   <!-- HEADER MEJORADO Y PROFESIONAL -->
+   
         <header class="main-header">
             
-            <!-- 1. LOGO -->
+            
             <div class="header-left">
                 <div class="logo">SHOPWAPP <span style="color:#cc0000;">*</span></div>
             </div>
 
-            <!-- 2. BARRA DE BÚSQUEDA CENTRAL (NUEVO) -->
+            
             <div class="header-center">
                 <div class="search-bar-container">
                     <input type="text" placeholder="Buscar productos...">
                     <button class="search-btn">
-                        <!-- Icono Lupa -->
+                        
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     </button>
                 </div>
             </div>
 
-            <!-- 3. MENÚ DERECHO CON ICONOS -->
+          
             <nav class="header-right">
                 
                 <a href="#inicio" class="nav-item">Inicio</a>
                 <a href="#productos" class="nav-item">Productos</a>
                 <a href="#contacto" class="nav-item">Contacto</a>
 
-                <!-- BOTÓN DE USUARIO INTELIGENTE -->
+               
                 <?php if(isset($_SESSION['usuario_nombre'])): ?>
                     
                     <?php
@@ -53,7 +53,7 @@
                     ?>
                     
                     <a href="<?php echo $ruta; ?>" class="btn-user-action">
-                        <!-- Icono Usuario -->
+                      
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                         <span><?php echo $texto; ?></span>
                     </a>
@@ -67,9 +67,23 @@
 
                 <?php endif; ?>
 
-                <!-- Icono Carrito (Decorativo) -->
-                <a href="#" class="icon-only">
+              
+               <?php 
+                    $cantidad_total = 0;
+                    if(isset($_SESSION['carrito'])){
+                        foreach($_SESSION['carrito'] as $p){
+                           
+                            $cantidad_total += $p['cantidad'];
+                        }
+                    }
+                ?>
+
+                <a href="carrito.php" class="icon-link cart-container-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                    
+                    <?php if($cantidad_total > 0): ?>
+                        <span class="cart-badge"><?php echo $cantidad_total; ?></span>
+                    <?php endif; ?>
                 </a>
 
             </nav>
@@ -78,7 +92,7 @@
         <section class="hero-section">
             <div class="hero-content">
                 <h1>La mejor opcion para tu bolsillo</h1>
-                <a href="sugerencia.html" class="btn-ordenar">Ordena ahora!</a>
+                <a href="producto.php" class="btn-ordenar">Ordena ahora!</a>
             </div>
             <div class="hero-image">
                 <img src="imgen/smartphones_-1160x696-removebg-preview.png" alt="Modelos de celulares premium"> 
@@ -92,13 +106,11 @@
                 <div class="products-grid">
                 
                 <?php
-                    // 1. PREPARAMOS LA CONSULTA
-                    // "Traeme todos (*) los productos de la tabla 'productos'"
+                   
                     $sql = "SELECT * FROM productos";
                     $resultado = $con->query($sql);
 
-                    // 2. INICIAMOS EL BUCLE (La Magia)
-                    // "Mientras haya productos en la fila, repite esto..."
+                   
                     while($fila = mysqli_fetch_assoc($resultado)){
                 ?>
 
@@ -117,7 +129,7 @@
                 </div>
 
                 <?php 
-                    } // AQUÍ SE CIERRA EL BUCLE
+                    } 
                 ?>
                 
             </div>         

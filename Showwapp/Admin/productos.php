@@ -38,7 +38,7 @@
                         $res = mysqli_query($con, $sql);
                         while($row = mysqli_fetch_assoc($res)){
                             echo "<tr>";
-                            // Muestra la imagen saliendo de la carpeta admin
+                            
                             echo "<td><img src='../".$row['url_imagen_principal']."' width='50' style='border-radius:5px;'></td>";
                             echo "<td>".$row['nombre']."</td>";
                             echo "<td>$".number_format($row['precio'], 2)."</td>";
