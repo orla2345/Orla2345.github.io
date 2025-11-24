@@ -1,36 +1,36 @@
 <?php
-session_start(); // IMPORTANTE: Iniciar sesión para guardar datos del usuario
-include "./conexion.php";
+session_start();
+include "conexion.php";
 
-if(isset($_POST['txtemail']) && isset($_POST['txtpass'])){
+// Recibir datos
+$email = mysqli_real_escape_string($con, $_POST['txtemail']);
+$password = sha1($_POST['txtpass']); 
+
+// Buscar usuario
+$sql = "SELECT * FROM usuarios WHERE email ='$email' AND password_hash ='$password'";
+$res = $con->query($sql);
+
+if (mysqli_num_rows($res) > 0){
+    $fila = mysqli_fetch_array($res);
     
-    $email = $con->real_escape_string($_POST['txtemail']); // Limpieza básica
-    $password = sha1($_POST['txtpass']); // Usamos SHA1 como en tu código
+    // Guardar sesión
+    $_SESSION['usuario_id'] = $fila['id_usuario'];
+    $_SESSION['usuario_nombre'] = $fila['nombre'];
+    $_SESSION['usuario_rol'] = $fila['rol']; 
 
-    // Consulta SQL adaptada a nuestra tabla 'usuarios'
-    $sql = "SELECT * FROM `usuarios` WHERE email ='$email' AND password_hash ='$password'";
-    
-    $res = $con->query($sql) or die($con->error);
-
-    if (mysqli_num_rows($res) > 0){
-        // Si las credenciales son correctas:
-        $fila = mysqli_fetch_array($res);
-        
-        // Guardamos datos en la sesión para usarlos en otras páginas
-        $_SESSION['usuario_id'] = $fila['id_usuario'];
-        $_SESSION['usuario_nombre'] = $fila['nombre'];
-        
-        // Redirigir al dashboard o página principal
-        header("Location: ../showapp.html"); 
-        // NOTA: Si tienes un 'dash.php' cámbialo por 'header("Location: ../dash.php");'
-        
+    // REDIRECCIÓN
+    if($fila['rol'] == 'admin'){
+        header("Location: ../Admin/index.php"); 
     } else {
-        // Si falla: Redirigir al login con un error (opcional: usar variable GET)
-        echo "<script>alert('Credenciales incorrectas'); window.location.href='../login.php';</script>";
+        header("Location: ../dashboard.php");   
     }
-
+    
 } else {
-    // Si faltan campos
-    echo "<script>alert('Por favor llene todos los campos'); window.location.href='../login.php';</script>";
+    echo '
+        <script>
+            alert("Correo o contraseña incorrectos");
+            window.location = "../login.php";
+        </script>
+    ';
 }
 ?>

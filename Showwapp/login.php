@@ -13,7 +13,7 @@
         <header class="main-header">
             <div class="logo">SHOPWAPP *</div>
             <nav class="main-nav">
-                <a href="showapp.html">VOLVER A TIENDA</a>
+                <a href="index.php">VOLVER A TIENDA</a>
             </nav>
         </header>
 

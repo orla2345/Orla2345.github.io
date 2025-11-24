@@ -1,0 +1,178 @@
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+
+body { 
+    background-color: #1c1c1c; 
+    color: #f0f0f0; 
+    display: flex; 
+    min-height: 100vh; 
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    width: 250px; 
+    /* Fondo negro al 60% de opacidad para ver el fondo detrás */
+    background-color: rgba(0, 0, 0, 0.6); 
+    /* EL EFECTO VIDRIO: Desenfoca lo que hay atrás */
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); /* Para Safari */
+    
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil brillante */
+    
+    display: flex; flex-direction: column; padding: 20px; position: fixed; height: 100%; z-index: 100;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+}
+
+.brand { 
+    font-size: 1.5em; font-weight: bold; margin-bottom: 40px; 
+    color: #cc0000; text-align: center; 
+    border-bottom: 1px solid #333; padding-bottom: 20px;
+}
+
+.menu a {
+    display: flex; align-items: center; gap: 10px; padding: 12px 15px; 
+    color: #ccc; text-decoration: none; border-radius: 8px; margin-bottom: 5px; 
+    font-weight: 500; transition: 0.3s;
+}
+
+.menu a:hover, .menu a.active { background-color: #cc0000; color: white; }
+
+
+.main-content { 
+    margin-left: 250px; 
+    flex-grow: 1; 
+    padding: 30px; 
+    background-image: url('../../imgen/fondo2.jpg'); 
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center;
+    position: relative;
+}
+/* Admin/css/admin.css */
+
+.main-content::before {
+    content: ""; 
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65); 
+    
+    z-index: -1;
+}
+.header { 
+    display: flex; justify-content: space-between; align-items: center; 
+    margin-bottom: 30px; border-bottom: 1px solid #333; padding-bottom: 15px; 
+}
+.header h1 { font-size: 2em; }
+
+
+.cards-grid { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; 
+}
+
+.card {
+    /* Fondo blanco muy sutil (5%) */
+    background: rgba(255, 255, 255, 0.05); 
+    
+    /* Desenfoque fuerte */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* Borde fino y sombra profunda */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    
+    padding: 25px; border-radius: 15px; /* Bordes más redondos como el login */
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #cc0000; /* Se ilumina rojo al pasar el mouse */
+    background: rgba(255, 255, 255, 0.08); /* Un poco más claro */
+}
+
+
+.card h3 { margin-bottom: 10px; color: white; }
+.card p { color: #aaa; font-size: 0.9em; margin-bottom: 20px; }
+
+.btn-card {
+    display: inline-block; padding: 10px 20px; 
+    border: 1px solid #cc0000; color: #cc0000; 
+    text-decoration: none; border-radius: 5px; font-weight: bold; width: 100%; transition: 0.3s;
+}
+.btn-card:hover { background-color: #cc0000; color: white; }
+
+/* --- TABLAS --- */
+.table-container, .form-container { 
+    background: rgba(255, 255, 255, 0.05); /* Mismo vidrio */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    padding: 30px; 
+    border-radius: 15px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+table { width: 100%; border-collapse: collapse; color: #ddd; margin-top: 20px; }
+th { text-align: left; padding: 15px; border-bottom: 2px solid #cc0000; color: #cc0000; }
+td { padding: 15px; border-bottom: 1px solid #333; }
+
+.btn-new { 
+    background-color: #cc0000; color: white; padding: 10px 15px; 
+    text-decoration: none; border-radius: 5px; float: right; font-weight: bold;
+}
+
+.btn-action { 
+    padding: 5px 10px; border-radius: 5px; color: white; 
+    text-decoration: none; font-size: 0.9em; margin-right: 5px; 
+}
+.btn-edit { background-color: #ffc107; color: black; }
+.btn-delete { background-color: #dc3545; }
+
+.role-badge { padding: 5px 10px; border-radius: 15px; font-size: 0.8em; font-weight: bold; color: white;}
+.admin { background-color: #cc0000; }
+.user { background-color: #555; }
+
+/* --- FORMULARIOS (NUEVO ESTILO MEJORADO) --- */
+
+.input-group { margin-bottom: 15px; }
+label { display: block; margin-bottom: 5px; color: #ccc; font-weight: bold; }
+
+/* Estilo para inputs normales y selects */
+input, select { 
+    width: 100%; padding: 12px; 
+    background: #1a1a1a; /* Fondo oscuro para inputs */
+    border: 1px solid #444; color: white; border-radius: 5px; 
+}
+
+/* Estilo ESPECIAL para las cajas grandes de texto */
+textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    color: #e0e0e0;
+    border-radius: 8px;
+    font-family: 'Consolas', monospace; /* Letra tipo código */
+    font-size: 0.95em;
+    line-height: 1.5;
+    resize: vertical;
+    min-height: 100px;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #cc0000;
+    outline: none;
+    background-color: #222;
+}
+
+.btn-save { 
+    background: #cc0000; color: white; border: none; 
+    padding: 12px 20px; width: 100%; font-weight: bold; 
+    cursor: pointer; margin-top: 15px; font-size: 1.1em;
+    border-radius: 5px; transition: 0.3s;
+}
+.btn-save:hover { background: #a00000; }
+
+small { display: block; margin-top: 5px; font-size: 0.8em; font-style: italic; color: #888; }
