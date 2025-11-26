@@ -1,6 +1,6 @@
 <?php
     session_start();
-    // SEGURIDAD
+    
     if(!isset($_SESSION['usuario_rol']) || $_SESSION['usuario_rol'] != 'admin'){
         header("Location: ../login.php");
         exit();

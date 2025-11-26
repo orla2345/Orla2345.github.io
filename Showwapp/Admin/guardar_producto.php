@@ -18,7 +18,7 @@ $caracteristicas = limpiarTexto($_POST['caracteristicas']);
 $especificaciones = limpiarTexto($_POST['especificaciones']);
 $software = limpiarTexto($_POST['software']);
 
-// 2. Procesar Imagen
+
 $nombre_imagen = $_FILES['imagen']['name'];
 $temporal = $_FILES['imagen']['tmp_name'];
 $carpeta = "../imgen"; 
@@ -27,10 +27,14 @@ $ruta = "imgen/" . $nombre_imagen;
 move_uploaded_file($temporal, $carpeta . "/" . $nombre_imagen);
 
 
+
+
 $sql = "INSERT INTO productos 
 (nombre, precio, url_imagen_principal, subtitulo, caracteristicas, especificaciones, software) 
 VALUES 
 ('$nombre', '$precio', '$ruta', '$subtitulo', '$caracteristicas', '$especificaciones', '$software')";
+
+
 
 if(mysqli_query($con, $sql)){
     header("Location: productos.php");
