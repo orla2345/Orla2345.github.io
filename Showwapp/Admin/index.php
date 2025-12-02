@@ -34,9 +34,15 @@
         </div>
 
         <div class="cards-grid">
+            <div class="card">
+    <h3>Reportes</h3>
+    <p>Generar PDF de inventario</p>
+    <a href="reporte_inventario.php" class="btn-card" target="_blank">Generar Reporte</a>
+</div>
            
             
             <div class="card">
+                
                 <h3>Productos</h3>
                 <p>Gestionar inventario</p>
                 <a href="productos.php" class="btn-card">Ver Productos</a>
