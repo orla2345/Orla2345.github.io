@@ -35,17 +35,16 @@
 
     <div id="content">
       <div class="info">
-        <h2>Programmer & UI/UX Designer</h2>
+        <h2>UNIDAD 1 AUTOMATAS 2</h2>
         <p>
-          I’m passionate about crafting engaging, functional, and user-centered digital experiences.  
-    I build modern web solutions that combine design and technology.
+        ANALISIS SEMANTICO DE LOS LENGUAJES DE PROGRAMACION
         </p>
         <button>Hire Me</button>
         <button>Portfolio</button>
       </div>
 
       <div class="img-content">
-        <img src="img/images.jpg" alt="Foto Orlando Molinar">
+        <img src="img/automata2.jpeg" alt="Foto Orlando Molinar">
       </div>
     </div>
   </section>
@@ -53,15 +52,21 @@
  
   <section id="about">
     <div class="img-about">
-      <img src="img/650_1200.jpg" alt="Foto Orlando Molinar">
+      <img src="img/automata1.PNG" alt="Foto Orlando Molinar">
     </div>
 
     <div class="info-about">
-      <h1>About Me</h1>
-      <h2>Orlando Molinar</h2>
+      <h1>1.1</h1>
+      <h2>Arboles y expresiones </h2>
       <p>
-        I am passionate about developing projects that are useful and professional developer
-        with over 3 years of experience creating applications for desktop, mobile, and web applications.
+   1. El Árbol de Sintaxis Abstracta (AST)A diferencia del árbol de derivación (que es muy detallado y estorboso), el AST es una versión simplificada que solo contiene la esencia de la jerarquía de las operaciones.Nodos internos: Representan operadores (como +, *, :=).Hojas: Representan operandos (identificadores o constantes).Ejemplo de ExpresiónPara la expresión: $a := b + c * 5$El análisis semántico utiliza este árbol para verificar, por ejemplo, que b y c sean del mismo tipo o que la multiplicación se realice antes que la suma.
+      </p>
+      <p>
+         2. Verificación de Tipos (Type Checking)
+Es la tarea principal del análisis semántico. El compilador recorre el árbol de abajo hacia arriba (bottom-up) verificando la compatibilidad.
+
+Ejemplo de error semántico:
+Si tienes int x; string y; e intentas hacer x = y + 10;, el analizador sintáctico dirá que la estructura es correcta (ID = ID + NUM), pero el analizador semántico lanzará un error porque no se puede sumar un texto con un número.
       </p>
 
       <div class="percents-container">
